@@ -1,3 +1,5 @@
+let body = document.querySelector(".body");
+let header = document.querySelector(".header");
 let bookmark = document.querySelector(".bookmark");
 let btnSun = document.querySelector(".header__btn");
 let sorts__text = document.querySelector(".sorts__text");
@@ -12,6 +14,7 @@ let bookmark__l__list = document.querySelector(".bookmark__l-list");
 
 btnSun.addEventListener("click" , () => {
     
+    header.classList.toggle("bg-dark")
     btnSun.classList.toggle("bg-dark")
     bookmark__text.classList.toggle("text-light")
     bookmark__l__header.classList.toggle("text-light")
