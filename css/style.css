@@ -155,9 +155,11 @@ header {
     flex-wrap: nowrap;
     padding: auto 20px;
 }
-
 .header__logo {
-    margin: 0;
+    fill:black;
+}
+.header__logo-fill {
+    fill:white;
 }
 
 .header__form {
@@ -224,7 +226,6 @@ header {
     background-position: 11px 4px;
     padding: 9px 13px 8px 42px;
     margin-left: 606px;
-    border-top: 1px solid #F5F6F8;
 }
 
 /* BOOKMARK */
@@ -452,8 +453,92 @@ header {
 }
 
 .offcanvas-header {
-    background-color: #F8FAFD;
+    background-color: #f2f3f4;
 }
 .offcanvas-body {
     background-color: #FFFFFF;
 }
+.darkmode-toggle {
+    background-color: transparent;
+    background: #100f2c;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border:none;
+    right: 32px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.darkmode-toggle--white {
+    background-color: transparent;
+}
+
+.darkmode-layer {        
+    position: fixed;       
+    pointer-events: none;       
+    background: ".concat(t.mixColor,";        
+    transition: all ").concat(t.time," ease;        
+    mix-blend-mode: difference;      
+}      
+.darkmode-layer--button {       
+    width: 2.9rem;        
+    height: 2.9rem;       
+    border-radius: 50%;       
+    right: ").concat(t.right,";        
+    bottom: ").concat(t.bottom,";       
+    left: ").concat(t.left,";     
+}     
+.darkmode-layer--simple {        
+    width: 100%;        
+    height: 100%;       
+    top: 0;       
+    left: 0;        
+    transform: scale(1) !important;     
+}      
+.darkmode-layer--expanded {        
+    transform: scale(100);        
+    border-radius: 0;     
+}      
+.darkmode-layer--no-transition {       
+    transition: none;      
+}     
+.darkmode-toggle {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.darkmode-toggle--white {
+    background: ;
+}
+.darkmode-toggle--inactive {
+    display: none;
+}
+.darkmode-background {
+    background: ;
+    position: fixed;
+    pointer-events: none;
+    z-index: -10;        width: 100%;
+    
+    height: 100%;       
+    top: 0;        
+    left: 0;     
+}      
+img, .darkmode-ignore {       
+    isolation: isolate;        
+    display: inline-block;      
+}     
+@media screen and (-ms-high-contrast: active), 
+(-ms-high-contrast: none) {        
+    .darkmode-toggle {display: none !important}     
+}      
+@supports (-ms-ime-align:auto), (-ms-accelerator:true) {        
+    .darkmode-toggle {display: none !important}      
+}    "),
+
