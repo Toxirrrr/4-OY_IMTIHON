@@ -123,6 +123,12 @@ body {
     background-color: #fff;
 }
 
+main {
+    max-width: 1259px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .body--darkDx{
     background-color: #000;
     color: #FFFFFF; 
@@ -146,14 +152,17 @@ p {
 }
 /* HEADER */
 header {
-    max-width: 1299px;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
 .header__inner-wrapper {
     flex-wrap: nowrap;
     padding: auto 20px;
+}
+.header__wrapper {
+    max-width: 1299px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .header__logo {
     fill:black;
@@ -192,6 +201,7 @@ header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     padding-top: 11px;
+    max-width: 1000vh;
 }
 
 .sotrs__container {

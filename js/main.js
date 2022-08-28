@@ -1,5 +1,5 @@
 let booksTemp = document.querySelector("#template").content;
-let elWrapper = document.querySelector(".body")
+let elWrapper = document.querySelector(".bookmark__r-list")
 let body = document.querySelector(".body");
 let header = document.querySelector(".header");
 let bookmark = document.querySelector(".bookmark");
@@ -13,12 +13,12 @@ let bookmark__l__item = document.querySelector(".bookmark__l-item");
 let bookmark__item__header = document.querySelector(".bookmark__item-header");
 let bookmark__l__header = document.querySelector(".bookmark__l-header");
 let bookmark__l__list = document.querySelector(".bookmark__l-list");
+let bookmark__r__header = document.querySelector(".bookmark__r-header");
 let modal__text = document.querySelector(".modal__text");
 let books__result = document.querySelector(".books__result")
 let header__logo = document.querySelector(".header__logo")
 let bookmark__btn__more = document.querySelector(".bookmark__btn-more")
-let sorts__result = document.querySelector(".sorts__result")
-let authToken = []
+let authToken = localStorage.getItem("token");
 let {log: log, clear: clear} = console
 
 
@@ -32,7 +32,7 @@ btnSun.addEventListener("click" , () => {
     bookmark__item__header.classList.toggle("text-light")
     bookmark__text.classList.toggle("text-light")
     bookmark__l__header.classList.toggle("text-light")
-    bookmark__r_header.classList.toggle("text-light")
+    bookmark__r__header.classList.toggle("text-light")
     bookmark__l__item.classList.toggle("bg-dark")
     bookmark__l__wrapper.classList.toggle("bg-dark")
     bookmark__r__item.classList.toggle("bg-dark")
@@ -60,14 +60,14 @@ function renderBooks(array) {
     for (const item of array) {
         let elWrapper = booksTemp.cloneNode(true);
         
-        elWrapper.querySelector(".bookmark__r-item-img").src = item.volumeInfo.imageLinks.Thumbnail;
+        elWrapper.querySelector(".bookmark__r-item-img").src = item.volumeInfo.imageLinks.thumbnail;
         elWrapper.querySelector(".bookmark__r--header").textContent = item.volumeInfo.title;
-        elWrapper.querySelector(".sorts__button").dataset = item.postId;
-        console.log(elWrapper.target);
+        elWrapper.querySelector(".bookmark__r-text").textContent = item.volumeInfo.authors;
+        elWrapper.querySelector(".bookmark__r-year").textContent = item.volumeInfo.publishedDate;
+        elWrapper.querySelector(".sorts__button");
         
         newFragment.appendChild(elWrapper)
-    log(item)
-
+        
     }
     elWrapper.appendChild(newFragment)
 }
@@ -76,7 +76,6 @@ elWrapper.addEventListener("click", function (evt) {
     
     let postItem = evt.target.dataset.postId;
     
-    console.log(data.items);
     
     // if (postItem) {
     //     fetch(`https://books.googleapis.com/books/v1/volumes?maxResults=10&orderBy=newest&q=golang`, {
@@ -102,7 +101,7 @@ elWrapper.addEventListener("click", function (evt) {
 
 )
 
-fetch("https://books.googleapis.com/books/v1/volumes?maxResults=10&orderBy=newest&q=golang", {
+fetch("https://books.googleapis.com/books/v1/volumes?maxResults=9&orderBy=newest&q=golang", {
 method: 'GET',
 headers: {
     "Content-Type": "application/json",
@@ -112,7 +111,8 @@ headers: {
 .then(res => res.json())
 .then(data => {
     if (!data.error) {
-        renderBooks(data.array)
+        renderBooks(data.items)
+        
         books__result.innerHTML = data.totalItems
     }
 })

@@ -87,12 +87,12 @@
             <div class="bookmark__right">
                 <div class="bookmark__r-wrapper">
                     <ul class="bookmark__r-list">
-                        <li class="bookmark__r-item col-4">
+                        <li class="bookmark__r-item col-4" style="display:none ;">
                             <div class="bookmark__item-img">
                                 <img class="bookmark__r-item-img" src="./img/moon.png" alt="oy-_-" width="201" height="202">
                             </div>
                             <div class="bookmark__r-item-text">
-                                <p class="bookmark__r-header"><strong class="bookmark__r--header" id="bookmark__r_header">Python</strong></p>
+                                <p class="bookmark__r-header"><strong class="bookmark__rheader" id="bookmark__r_header">Python</strong></p>
                                 <p class="bookmark__r-text">David M. Beazley</p>
                                 <p class="bookmark__r-year">2009</p>
                             </div>
@@ -117,8 +117,6 @@
                                         <ul class="modal__list">
                                             <li class="modal__item">
                                                 <p class="modal__item-text">Author : 
-                                                    <span class="author" id="author">asdfinoasd</span>
-                                                    <span class="author" id="author">asdfinoasd</span>
                                                     <span class="author" id="author">asdfinoasd</span>
                                                 </p>
                                             </li>
@@ -151,9 +149,9 @@
             </div>
             <div class="bookmark__r-item-btn">
                 <button class="btn-warning btn w-50">Bookmark</button>
-                <button class="btn btn-primary btn w-50 info text-info">More Info</button>
+                <button class="btn btn-primary btn w-50 info text-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>
                 
-                <button class="btn-secondary mt-2 btn bookmark__btn-more w-100">Read</button>
+                <button class="btn-secondary mt-2 btn w-100">Read</button>
                 
                 
                 <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style="background-color: #F8FAFD;">
@@ -165,7 +163,7 @@
                         <img src="./img/more_info-img.png" alt="photo">
                     </div>
                     <div class="offcanvas-body">
-                        <p class="modal__text">Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis Lorem.</p>
+                        <p class="modal__text" id="modal__text">Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id. Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis Lorem.</p>
                         
                         <ul class="modal__list">
                             <li class="modal__item">
