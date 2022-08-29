@@ -151,9 +151,6 @@ p {
     margin-right: auto;
 }
 /* HEADER */
-header {
-
-}
 
 .header__inner-wrapper {
     flex-wrap: nowrap;
@@ -164,11 +161,20 @@ header {
     margin-left: auto;
     margin-right: auto;
 }
+
+.header__navbar {
+    flex-wrap: nowrap;
+}
+
 .header__logo {
     fill:black;
 }
 .header__logo-fill {
     fill:white;
+}
+
+.header__mode-moon {
+    display: none;
 }
 
 .header__form {
@@ -180,6 +186,21 @@ header {
 .header__btn {
     margin-right: 50px;
 }
+.active main {
+    background: rgba(33, 37, 41, 1);
+}
+
+.active header {
+    background: rgba(33, 37, 41, 1);
+}
+
+.active{
+    background: rgba(33, 37, 41, 1);
+}
+
+.active .header__mode-sun {
+    display: none;
+}
 
 .header__input {
     background: #F8FAFD;
@@ -190,7 +211,6 @@ header {
     line-height: 15px;
     color: rgba(0, 0, 0, 0.24);
     padding-left: 48px;
-    background-image: url(./../img/lupa.svg);
     background-repeat: no-repeat;
     background-position: 16px 15px;
     padding-top: 17px;
@@ -206,7 +226,7 @@ header {
 
 .sotrs__container {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     
     padding-top: 11px;
     padding-bottom: 11px;
@@ -235,7 +255,6 @@ header {
     background-repeat: no-repeat;
     background-position: 11px 4px;
     padding: 9px 13px 8px 42px;
-    margin-left: 606px;
 }
 
 /* BOOKMARK */
@@ -331,6 +350,7 @@ header {
 }
 
 
+
 .bookmark__item-icon-btn {
     height: 30px;
     width: 30px;
@@ -343,15 +363,10 @@ header {
     padding-left: 39px;
 }
 
-.bookmark__r-wrapper {
-    
-}
-
 .bookmark__r-list {
     display: flex;
-    
     flex-wrap: wrap;
-    width: 950px;
+    max-width: 950px;
     justify-content: space-between;
 }
 
@@ -379,10 +394,6 @@ header {
     width: 201px;
     height: 202px;
     object-fit: contain;
-}
-
-.bookmark__r-item-text {
-    
 }
 
 .bookmark__r-header {
@@ -446,7 +457,7 @@ header {
 .modal__list {
     margin-top: 33px;
 }
-.author {
+.modal__textt {
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 400;
@@ -524,31 +535,14 @@ header {
     justify-content: center;
     align-items: center;
 }
-.darkmode-toggle--white {
-    background: ;
-}
-.darkmode-toggle--inactive {
-    display: none;
-}
-.darkmode-background {
-    background: ;
-    position: fixed;
-    pointer-events: none;
-    z-index: -10;        width: 100%;
-    
-    height: 100%;       
-    top: 0;        
-    left: 0;     
-}      
+
 img, .darkmode-ignore {       
     isolation: isolate;        
     display: inline-block;      
 }     
-@media screen and (-ms-high-contrast: active), 
-(-ms-high-contrast: none) {        
-    .darkmode-toggle {display: none !important}     
-}      
-@supports (-ms-ime-align:auto), (-ms-accelerator:true) {        
-    .darkmode-toggle {display: none !important}      
-}    "),
 
+.bookmark__remove {
+    position: absolute;
+    left: 0;  
+    bottom: 99999px;
+}
